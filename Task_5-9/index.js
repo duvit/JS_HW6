@@ -59,10 +59,6 @@ function getUsersByYear(year) {
 function getCondidatesByUnreadMsg(amount) {
   const candidatesArr = [...candidateArr];
 
-  candidatesArr.sort(
-    (a, b) => a.greeting.match(/\d+/)[0] - b.greeting.match(/\d+/)[0]
-  );
-
   const candidatesWithUnreadMsg = candidatesArr.filter(
     (el) => el.greeting.match(/\d+/)[0] == amount
   );
@@ -70,7 +66,7 @@ function getCondidatesByUnreadMsg(amount) {
   return candidatesWithUnreadMsg;
 }
 
-// console.log(getCondidatesByUnreadMsg(8));
+console.log(getCondidatesByUnreadMsg(8));
 
 //9.Создать функцию которая вернет массив по свойству gender.
 // Все так же используем массив candidateArr
