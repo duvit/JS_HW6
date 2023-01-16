@@ -21,11 +21,7 @@ const candidate = new Сandidate(candidateArr[0]);
 
 function getCompanyNames() {
   const candidatesArr = [...candidateArr];
-  const companiesArr = [];
-
-  candidatesArr.forEach((obj) => {
-    companiesArr.push(obj.company);
-  });
+  const companiesArr = candidatesArr.map(obj =>  obj.company);
 
   const uniqueCompanies = companiesArr.filter(
     (item, index) => companiesArr.indexOf(item) === index
@@ -34,7 +30,7 @@ function getCompanyNames() {
   return uniqueCompanies;
 }
 
-// console.log(getCompanyNames());
+console.log(getCompanyNames());
 
 //7. Создать функцию которая выведет мне массив id всех кaндидатов, которые
 //были зарагестрированны в том же году что и год указанный в параметре.
@@ -66,7 +62,7 @@ function getCondidatesByUnreadMsg(amount) {
   return candidatesWithUnreadMsg;
 }
 
-console.log(getCondidatesByUnreadMsg(8));
+// console.log(getCondidatesByUnreadMsg(8));
 
 //9.Создать функцию которая вернет массив по свойству gender.
 // Все так же используем массив candidateArr
